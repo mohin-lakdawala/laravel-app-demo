@@ -8,11 +8,22 @@ use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
+    /**
+     * List all games.
+     *
+     * @return mixed
+     */
     public function index()
     {
         return auth()->user()->games()->with('logs')->latest()->get();
     }
 
+    /**
+     * Store a new game.
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function store(Request $request)
     {
         return auth()->user()->games()->create([
@@ -22,9 +33,15 @@ class GamesController extends Controller
         ]);
     }
 
+    /**
+     * Update an existing game.
+     *
+     * @param UpdateRequest $request
+     * @param Game $game
+     * @return Game
+     */
     public function update(UpdateRequest $request, Game $game)
     {
-
         $game->update([
             'finished_at' => now(),
             'player_life' => $request->get('playerLife'),

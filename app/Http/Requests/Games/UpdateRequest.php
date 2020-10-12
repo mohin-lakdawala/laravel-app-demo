@@ -13,9 +13,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        $game = $this->route('game');
-
-        return $game->user->id === auth()->id();
+        return $this->route('game')->user->id === auth()->id();
     }
 
     /**
