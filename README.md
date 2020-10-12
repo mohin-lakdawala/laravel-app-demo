@@ -24,3 +24,4 @@ php artisan test
 Some improvements that can be done but left out in this iteration due to time constraints have been listed below:
 
 1. More robust authentication system using `refreshToken` 
+1. Use Docker for development
