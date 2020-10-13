@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['https://hopeful-dijkstra-6ecdae.netlify.app'],
 
     'allowed_origins_patterns' => [],
 
